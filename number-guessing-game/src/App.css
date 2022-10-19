@@ -1,0 +1,95 @@
+.App {
+  text-align: center;
+  background-color: #04293A;
+  color: #ECB365;
+  padding: 10px;
+  border: 2px solid #ECB365;
+}
+
+h3 {
+  text-decoration: underline;
+}
+
+.input {
+  margin-left: 10px;
+  color: #041C32;
+}
+
+.button {
+  margin-top: 10px;
+  background-color:  #064663;
+  color: #ECB365;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin-left: 4px;
+}
+
+.start {
+  
+  margin-top: 10px;
+  background-color: #064663;
+  color: #ECB365;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-size: 24px;
+}
+
+.bg-warning {
+  background-color: red;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px ;
+}
+
+.bg-success {
+  animation: shake 2s infinite;
+  background-color: green;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.alert-info{
+  animation: shake 2s infinite;
+  background-color: #ECB365 ;
+  color: #041C32;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.aler-range {
+  animation: shake 2s infinite;
+  background-color: #ECB365;
+  color: #041C32;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+
+.bg-info {
+  background-color: #041C32;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.bg-danger {
+  background-color: #041C32;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+@keyframes shake {
+  10% {transform: scale(1.05) rotate(5deg);}
+  20% {transform: scale(1.05) rotate(-5deg);}
+  30% {transform: scale(1.05) rotate(5deg);}
+  40% {transform: none;}
+}
+
+
+
+
+
+
+
