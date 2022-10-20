@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [numberToGuess, setNumberToGuess] = useState();
-  const [userInput, setUserInput] = useState(0);
+  const [userInput, setUserInput] = useState();
   const [previousAttempts, setPreviousAttempts] = useState([]);
   const [isWinner, setIsWinner] = useState(false);
   const [numberOfAttempts, setNumberOfAttempts] = useState(10);
@@ -33,6 +33,8 @@ function App() {
         setAlertMessage(<p className='alert-info'>You have already entered this number!</p>);
       } else if (userGuess === numberToGuess) {
         setAlertMessage(<p className='bg-success'>Congratulations! You got it right!</p>);
+        setPreviousAttempts([...previousAttempts, userGuess]);
+        setNumberOfAttempts(numberOfAttempts - 1);
         setIsWinner(true);
         setIsDisabled(true);
       } else if (userGuess > numberToGuess) {
@@ -45,18 +47,27 @@ function App() {
         setPreviousAttempts([...previousAttempts, userGuess]);
         setNumberOfAttempts(numberOfAttempts - 1);
         gameOver(numberOfAttempts, userGuess);
-      }
-    }
+      } 
+    } setUserInput("");
   };
 
   const resetGame = () => {
     setNumberToGuess(Math.round(Math.random() * 100) + 1);
-    setUserInput(0);
+    setUserInput();
     setPreviousAttempts([]);
     setIsWinner(false);
     setNumberOfAttempts(10);
     setAlertMessage();
     setIsDisabled(false);
+  };
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    const regexExpression = new RegExp("^[1-9]+[0-9]*$");
+
+    if (regexExpression.test(e.target.value)) {
+      setUserInput(e.target.value);
+    }
   };
 
   return (
@@ -65,18 +76,15 @@ function App() {
       <h3>Guess a number between 1 and 100</h3>
 
       <div>
+
         <>
           <label>Enter a number :</label>
-          
           <input
             className='input'
             type="number"
-            placeholder='Enter a number'
             value={userInput}
-            onChange={(e) => {
-              e.preventDefault();
-              setUserInput(e.target.value);
-            }}
+            placeholder='Enter a number'
+            onChange={(e) => handleChange(e)}
           />
         </>
 

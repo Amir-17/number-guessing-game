@@ -6,8 +6,13 @@
   border: 2px solid #ECB365;
 }
 
+h1 {
+  letter-spacing: 2px;
+}
+
 h3 {
   text-decoration: underline;
+  letter-spacing: 1.5px;
 }
 
 .input {
@@ -67,14 +72,14 @@ h3 {
 
 
 .bg-info {
-  background-color: #041C32;
+  background-color: #0087d0;
   color: white;
   border: 1px solid white;
   border-radius: 5px;
 }
 
 .bg-danger {
-  background-color: #041C32;
+  background-color: #601600;
     color: white;
     border: 1px solid white;
     border-radius: 5px;
