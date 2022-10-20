@@ -53,13 +53,17 @@ function App() {
 
   const resetGame = () => {
     setNumberToGuess(Math.round(Math.random() * 100) + 1);
-    setUserInput();
+    setUserInput("");
     setPreviousAttempts([]);
     setIsWinner(false);
     setNumberOfAttempts(10);
     setAlertMessage();
     setIsDisabled(false);
   };
+
+  const clearInput = () => {
+    setUserInput("");
+  }
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -99,7 +103,7 @@ function App() {
           <button
             className='button'
             disabled={isDisabled}
-            onClick={() => setUserInput(0)}>
+            onClick={() => clearInput()}>
             Clear
           </button>
 
